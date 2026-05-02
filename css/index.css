@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background: radial-gradient(circle at top, #1a1a1a, #000);
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container{
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+/*NOMES*/
+.names{
+    font-size: 2rem;
+    color: #ff4d88;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    animation: fadeDown 1s ease;
+}
+
+.names span {
+    color: #fff;
+}
+
+/*TiTULO*/
+.title{
+    margin-top: 10px;
+    font-size: 2.5rem;
+}
+
+/*SLIDER*/
+.slider {
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.slides img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: blur(1px);
+    transform: scale(1.1);
+    transition: 1s ease;
+}
+
+/*imagem APPLE*/
+.slides img.active{
+    filter: blur(0);
+    transform: scale(1);
+}
+
+/*BOTÕES*/
+.buttons {
+    margin-top: 20px;
+    position: relative;
+    height: 120px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yes {
+    background: linear-gradient(45deg, #ff4d88, #ff1a66);
+    color: #fff;
+}
+
+#no{
+    background: #333;
+    color: #fff;
+    position: absolute;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/*ANEL*/
+.ring-container {
+    display: none;
+    margin-top: 30px;
+}
+
+.ring {
+    width: 80px;
+    height: 80px;
+    border: 6px solid #ff4d88;
+    border-radius: 50%;
+    margin: auto;
+    position: relative;
+    animation: openRing 1s  ease forwards;
+}
+
+.ring::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+/*MENSAGEM*/
+.message {
+    margin-top: 20px;
+    font-size: 1.6rem;
+    display: none;
+    animation: fadeUp 1s ease;
+}
+
+/*ANIMAÇÕES*/
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes openRing {
+    0% {
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1) rotate(0);
+        opacity: 1;
+    }
+}
+
+/*RESPONSIVEL*/
+@media (max-width: 600px) {
+    .slides img {
+        height: 200px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+}
