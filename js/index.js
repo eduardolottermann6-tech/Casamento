@@ -10,10 +10,12 @@ function updateSlider() {
     images[index].classList.add("active");
 }
 
+const tempoTotal = 4000 ; // 4s
+
 setInterval(() => {
     index = (index + 1) % images.length;
     updateSlider();
-}, 3000);
+}, tempoTotal);
 
 updateSlider();
 
